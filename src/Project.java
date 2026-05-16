@@ -24,7 +24,7 @@ public class Project implements Serializable {
         return 0;
     }
 
-    public List<Integer> getTaskId() {
+    public List<Integer> getTaskIds() {
         return tasksId;
     }
 
