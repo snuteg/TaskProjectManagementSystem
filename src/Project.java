@@ -15,15 +15,6 @@ public class Project implements Serializable {
     public int getId() {return id;}
     public String getName() {return name;}
 
-    public int getTaskIds(int taskId) {
-        for (Integer task : taskIds) {
-            if (task == taskId) {
-                return task;
-            }
-        }
-        return 0;
-    }
-
     public List<Integer> getTaskIds() {
         return taskIds;
     }
