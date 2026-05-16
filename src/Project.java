@@ -4,19 +4,19 @@ import java.util.List;
 
 public class Project implements Serializable {
     private String name;
-    private List<Integer> tasksId;
+    private List<Integer> taskIds;
     private int id;
 
     public Project(String name) {
         this.name = name;
-        this.tasksId = new ArrayList<>();
+        this.taskIds = new ArrayList<>();
     }
 
     public int getId() {return id;}
     public String getName() {return name;}
 
-    public int getTaskId(int taskId) {
-        for (Integer task : tasksId) {
+    public int getTaskIds(int taskId) {
+        for (Integer task : taskIds) {
             if (task == taskId) {
                 return task;
             }
@@ -25,11 +25,11 @@ public class Project implements Serializable {
     }
 
     public List<Integer> getTaskIds() {
-        return tasksId;
+        return taskIds;
     }
 
     public void setId(int id) {this.id = id;}
-    public void setTaskId(int task) {tasksId.add(task);}
+    public void setTaskId(int task) {taskIds.add(task);}
 
     @Override
     public String toString() {
