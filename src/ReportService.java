@@ -17,20 +17,18 @@ public class ReportService {
 
         System.out.println("Project: " + project.getName());
 
-        try {
-            System.out.println("List of tasks:");
-            for (Integer task : project.getTaskId()) {
-                if (taskService.findById(task).getId() == task) {
-                    System.out.println(
-                            "Task: " + taskService.findById(task).getName()
-                            + " | Priority: " + taskService.findById(task).getPriority()
-                            + " | Deadline: " + taskService.findById(task).getDeadline()
-                            + " | Status: " + taskService.findById(task).getStatus()
-                    );
-                }
+        System.out.println("List of tasks:");
+        for (Integer taskId : project.getTaskIds()) {
+            Task task = taskService.findById(taskId);
+
+            if (task != null) {
+                System.out.println(
+                        "Task: " + task.getName()
+                        + " | Priority: " + task.getPriority()
+                        + " | Deadline: " + task.getDeadline()
+                        + " | Status: " + task.getStatus()
+                );
             }
-        } catch (NullPointerException e) {
-            System.out.println("Exception: " + e.getMessage());
         }
     }
 
