@@ -25,7 +25,6 @@ public class FileTaskRepository implements TaskRepository {
         return new ArrayList<>(tasks);
     }
 
-    @Override
     public void setAll(List<Task> loadedTasks) {
         tasks.clear();
         tasks.addAll(loadedTasks);

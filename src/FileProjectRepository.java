@@ -25,7 +25,6 @@ public class FileProjectRepository implements ProjectRepository {
         return new ArrayList<>(projects);
     }
 
-    @Override
     public void setAll(List<Project> loadedProjects) {
         projects.clear();
         projects.addAll(loadedProjects);
